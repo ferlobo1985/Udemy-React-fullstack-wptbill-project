@@ -67,12 +67,18 @@ const Stage1 = () =>  {
                     {item}
                     <span
                       className="badge badge-danger"
-                      onClick={()=> alert('remove')}
+                      onClick={()=> context.removePlayer(idx)}
                     >x</span>
                   </li>
                 ))
                 }
               </ul>
+              <div
+                className="action_button"
+                onClick={()=> context.next() }
+              >
+                NEXT
+              </div>
             </div>
           </>
          :null
