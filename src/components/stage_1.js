@@ -56,6 +56,27 @@ const Stage1 = () =>  {
         <Button className="miami" variant="primary" type="submit">
           Add player
         </Button>
+        {
+         context.state.players && context.state.players.length > 0 ?
+          <>
+            <hr/>
+            <div>
+              <ul className="list-group">
+                { context.state.players.map((item,idx)=>(
+                  <li key={idx} className="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                    {item}
+                    <span
+                      className="badge badge-danger"
+                      onClick={()=> alert('remove')}
+                    >x</span>
+                  </li>
+                ))
+                }
+              </ul>
+            </div>
+          </>
+         :null
+        }
       </Form>
      
     </>
